@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memoria - Práctica 1 Guiada Ionic</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #3880ff;
+            text-align: center;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #3880ff;
+            margin-top: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        h3 {
+            color: #555;
+            margin-top: 20px;
+        }
+        .info-box {
+            background-color: #f9f9f9;
+            border-left: 5px solid #3880ff;
+            padding: 15px;
+            margin-bottom: 30px;
+        }
+        .info-box p {
+            margin: 5px 0;
+        }
+        .placeholder-image {
+            width: 100%;
+            height: 200px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #999;
+            color: #666;
+            margin: 15px 0;
+            cursor: pointer;
+        }
+        .placeholder-image::after {
+            content: "📸 INSERTAR CAPTURA DE PANTALLA AQUÍ";
+            font-weight: bold;
+        }
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #777;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+        @media print {
+            body { background-color: #fff; }
+            .container { box-shadow: none; max-width: 100%; padding: 0; margin: 0; }
+            .placeholder-image { border: 1px solid #ccc; background-color: #fff; height: auto; min-height: 100px; }
+            .placeholder-image::after { content: " [CAPTURA DE PANTALLA] "; position: static; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Práctica 1 Guiada - Ionic</h1>
+
+    <div class="info-box">
+        <p><strong>Nombre del Alumno:</strong> Javier Oliver</p>
+        <p><strong>Curso:</strong> 2º CSI</p>
+        <p><strong>Asignatura:</strong> Desarrollo Web en Entorno Cliente</p>
+        <p><strong>Fecha:</strong> 10 de Febrero de 2026</p>
+    </div>
+
+    <h2>Introducción</h2>
+    <p>En esta práctica se ha desarrollado una serie de ejercicios guiados para adquirir competencias en el desarrollo de aplicaciones móviles multiplataforma utilizando el framework Ionic con Angular.</p>
+
+    <!-- Ejercicio 1 -->
+    <h2>Ejercicio 1: Aplicación TABS (DISM1)</h2>
+    <p>Se ha creado una aplicación basada en la plantilla "tabs", que incluye una estructura de navegación por pestañas. Se han personalizado los componentes visuales y la navegación básica.</p>
+    <div class="placeholder-image"></div>
+    <p><em>Descripción de la captura: Vista principal de la aplicación con la estructura de tabs visible.</em></p>
+
+    <!-- Ejercicio 2 -->
+    <h2>Ejercicio 2: Aplicación Side Menu (DISM2)</h2>
+    <p>Se ha implementado una aplicación con un menú lateral desplegable ("Side Menu"). Se ha configurado la navegación para permitir el acceso a diferentes secciones desde el menú lateral.</p>
+    <div class="placeholder-image"></div>
+    <p><em>Descripción de la captura: Menú lateral desplegado mostrando las opciones de navegación.</em></p>
+
+    <!-- Ejercicio 3 -->
+    <h2>Ejercicio 3: Servicios HTTP (DISM3)</h2>
+    <p>Implementación de un servicio (<code>ApiService</code>) utilizando <code>HttpClient</code> de Angular para consumir datos de una API externa (Fake User API). Los datos obtenidos se visualizan en una lista dentro de la aplicación.</p>
+    <div class="placeholder-image"></div>
+    <p><em>Descripción de la captura: Lista de usuarios cargada dinámicamente desde la API externa.</em></p>
+
+    <!-- Ejercicios 4 y 5 -->
+    <h2>Ejercicios 4 y 5: API REST Falsa y CRUD (DISM4)</h2>
+    <p>Se ha configurado un servidor local con <code>json-server</code> y una base de datos <code>db.json</code> para simular una API REST completa. La aplicación DISM4 realiza operaciones CRUD completas:</p>
+    <ul>
+        <li><strong>Crear:</strong> Formulario para añadir nuevos usuarios.</li>
+        <li><strong>Leer:</strong> Listado de usuarios existentes.</li>
+        <li><strong>Actualizar:</strong> Edición de datos de usuario.</li>
+        <li><strong>Borrar:</strong> Eliminación de usuarios del listado.</li>
+    </ul>
+    <div class="placeholder-image"></div>
+    <p><em>Descripción de la captura: Pantalla principal mostrando el listado con botones de edición y borrado.</em></p>
+    <div class="placeholder-image"></div>
+    <p><em>Descripción de la captura: Formulario de edición de usuario.</em></p>
+
+    <!-- Ejercicio 6 -->
+    <h2>Ejercicio 6: Geolocalización (GeolocacionApp)</h2>
+    <p>Integración del plugin nativo de Geolocalización de Capacitor. La aplicación solicita permisos al usuario y muestra las coordenadas actuales (latitud y longitud) en la pantalla.</p>
+    <div class="placeholder-image"></div>
+    <p><em>Descripción de la captura: Pantalla mostrando las coordenadas obtenidas del dispositivo.</em></p>
+
+    <!-- Ejercicio 7 -->
+    <h2>Ejercicio 7: Diseño API con OpenAPI</h2>
+    <p>Diseño de la especificación de la API utilizando Swagger Editor, definiendo los endpoints, modelos de datos y respuestas esperadas.</p>
+    <div class="placeholder-image"></div>
+    <p><em>Descripción de la captura: Visualización de la especificación API en Swagger Editor.</em></p>
+
+    <!-- Ejercicios 8 y 9 -->
+    <h2>Ejercicios 8 y 9: Stub de Servidor Node.js (DISM5)</h2>
+    <p>Generación del código servidor (Stub) a partir de la especificación OpenAPI. Se ha implementado la lógica de negocio simulada en Node.js para responder a las peticiones del cliente (GET, POST, PUT, DELETE) tal como se definió en el contrato de la API.</p>
+    <div class="placeholder-image"></div>
+    <p><em>Descripción de la captura: Respuesta del servidor Node.js a una petición GET (puede ser desde navegador o Postman).</em></p>
+
+    <h2>Conclusión</h2>
+    <p>La práctica ha permitido recorrer el flujo completo de desarrollo con Ionic, desde la creación de interfaces sencillas hasta la integración con servicios nativos y APIs REST, proporcionando una visión sólida del ecosistema de desarrollo híbrido.</p>
+
+    <footer>
+        <p>Documento generado para entrega de Práctica 1 - Desarrollo Web en Entorno Cliente</p>
+    </footer>
+</div>
+
+<script>
+    // Simple script to allow clicking placeholders to remind user
+    document.querySelectorAll('.placeholder-image').forEach(div => {
+        div.addEventListener('click', () => {
+             alert('Para la entrega final: Imprime esta página como PDF y luego usa un editor de PDF para pegar tus capturas, O guarda este HTML y edítalo para incluir las etiquetas <img> reales.');
+        });
+    });
+</script>
+
+</body>
+</html>
