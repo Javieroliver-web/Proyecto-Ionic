@@ -1,16 +1,28 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Geolocalización
+      Listado Usuarios
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding">
-  <h1>Mi ubicación</h1>
-  <p *ngIf="latitude">Latitud: {{ latitude }}</p>
-  <p *ngIf="longitude">Longitud: {{ longitude }}</p>
-  
-  <ion-button expand="block" (click)="obtenerCoordenadas()">Obtener Ubicación</ion-button>
-</ion-content>
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item *ngFor="let item of UsuarioData">
+      <ion-label>
+        <h2>Id: {{item.id}}</h2>
+        <h2>Nombre: {{item.nombre}}</h2>
+        <p>Email: {{item.email}}</p>
+        <p>Edad: {{item.edad}}</p>
+      </ion-label>
+      <ion-button [routerLink]="['/editar/' + item.id]" color="warning" size="small">
+        <ion-icon name="create"></ion-icon>
+      </ion-button>
+      <ion-button (click)="deleteUsuario(item)" color="danger" size="small">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
 
+  <ion-button [routerLink]="['/nuevo']" expand="block">Nuevo Usuario</ion-button>
+</ion-content>

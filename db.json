@@ -1,0 +1,28 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Sergio",
+      "email": "sergio@ua.es",
+      "edad": 23
+    },
+    {
+      "id": 2,
+      "nombre": "Estela",
+      "email": "estela@ua.es",
+      "edad": 19
+    },
+    {
+      "id": 3,
+      "nombre": "Susana",
+      "email": "susana@ua.es",
+      "edad": 27
+    },
+    {
+      "id": 4,
+      "nombre": "Hugo",
+      "email": "hugo@ua.es",
+      "edad": 18
+    }
+  ]
+}
