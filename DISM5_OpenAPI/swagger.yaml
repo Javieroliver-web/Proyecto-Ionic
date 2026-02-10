@@ -1,0 +1,20 @@
+openapi: 3.0.0
+info:
+  title: API DISM 5
+  description: API de ejemplo para la práctica 1 guiada de Ionic.
+  version: 1.0.0
+paths:
+  /saludo:
+    get:
+      summary: Devuelve un saludo.
+      responses:
+        '200':
+          description: Saludo exitoso.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  mensaje:
+                    type: string
+                    example: ¡Hola desde la API de DISM!

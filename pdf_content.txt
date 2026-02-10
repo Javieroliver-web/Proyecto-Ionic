@@ -1,0 +1,1070 @@
+ 
+1  
+PRÁCTICA IONIC 
+ASIGNATURA: DESARROLLO WEB EN ENTORNO CLIENTE   CURSO: 2º CSI 
+La finalidad de esta práctica es introducirse en la programación de dispositivos móviles 
+(smartphones, tablets, etc.), para la obtención de aplicaciones multiplataforma. En 
+concreto, se trabajará sobre el framework de desarrollo de aplicaciones multiplataforma 
+Ionic ( https://ionicframework.com). Este framework como veremos, nos permitirá 
+desarrollar una misma aplicación y que esta puede ser utilizada en las diferentes 
+plataformas disponibles en el mercado (Android, iOS). 
+ 
+Se utilizarán el entorno de desarrollo Visual Code, así como las diferentes herramientas 
+que nos facilitarán el trabajo de compilación, depuración, pruebas y despliegue, 
+mediante el framework Ionic. 
+ 
+Comenzaremos desarrollando una serie de ejemplos guiados, los cuales nos introducirán 
+en el desarrollo de aplicaciones multiplataforma, mediante IONIC. Una vez realizados 
+estos ejercicios guiados, se planteará un ejercicio a partir del cual se calificará esta 
+práctica. 
+ 
+Las diferentes herramientas a emplear podemos encontrarlas para los sistemas 
+operativos más habituales (Windows, Linux, macOS). Los ejercicios guiados que se 
+detallan a continuación se basan en una instalación bajo Windows 10/11 64 bits. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2  
+Introducción a Ionic Framework 
+ 
+Dentro de los frameworks multiplataforma nos encontramos con diversos frameworks, 
+siendo Ionic uno de los más populares y con mayor comunidad. 
+ 
+Para desarrollar con Ionic vamos a necesitar una serie de herramientas. Lo primero será 
+un editor de código, Visual Studio Code es una herramienta ligera y potente, en la cual 
+podemos añadir extensiones para facilitar el trabajo. 
+ 
+Ionic es una herramienta en la que se hace un  uso intensivo de comandos de consola y 
+por ello haremos uso de la línea de comandos que ofrece Visual Studio Code, evitando 
+alternar tareas constantemente para acceder a la ventana de comandos. Además, nos 
+permite abrir varias instancias de la misma que, como veremos más adelante, será 
+fundamental. 
+ 
+También necesitaremos los SDK de aquellas plataformas para las que vayamos a 
+desarrollar. Si desarrollamos para Android necesitaremos instalar su SDK, siendo la 
+forma más sencilla instalar Android Studio. 
+ 
+Ionic internamente utiliza Cordova, como librería intermedia de código abierto que nos 
+permite hacer aplicaciones móviles basadas en HTML5, CSS3 y Javascript. Por lo tanto, 
+será necesario tener un conocimiento básico en esos tres lenguajes. También podemos 
+emplear Capacitor el nuevo puente nativo para crear aplicaciones nativas. 
+ 
+Entre el lenguaje propio de Ionic y Cordova existe una capa intermedia. Esta capa 
+intermedia estará formada por un framework que actualmente puede ser Angular, React 
+o Vue. En nuestro caso optaremos por Angular, un framework de desarrollo web creado 
+por Google y basado en Javascript que permite el desarrollo de aplicaciones web 
+mediante MVC , muy resumidamente nos permite que si en nuestro modelo tenemos 
+una propiedad y la mostramos en la vista mediante una directiva ng-model, todos los 
+cambios que hagamos en nuestro controlador sobre esa propiedad se reflejarán 
+inmediatamente en la vista y todos los cambios que hagamos en la vista (por ejemplo 
+en una casilla de entrada de texto) se reflejarán en la propiedad del modelo. 
+ 
+Para comenzar con Ionic, no necesitaremos obligatoriamente conocer Angular, para 
+desarrollos más avanzados si es interesante estar familiarizado. 
+ 
+ 
+ 
+ 
+ 
+ 
+3  
+ 
+Tanto Angular como Ionic emplean Typescript un superconjunto de javascript, el cual 
+incluye todas las funcionalidades de JS más las funcionalidades de TS. Es un lenguaje 
+estricto en la forma de declarar y utilizar sus variables con el objetivo de crear un código 
+más inteligible. 
+ 
+En la web de typescript podemos encontrar toda la documentación: 
+https://www.typescriptlang.org 
+ 
+Interesante este tutorial para los programadores que vienen de JS: 
+https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html 
+ 
+Y la herramienta para convertir de TypeScript a Javascript: 
+https://www.typescriptlang.org/play 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+4  
+ 
+Ejercicio 0. Instalación software necesario 
+ 
+Para poder desarrollar aplicaciones mediante IONIC, necesitaremos el siguiente 
+software: 
+ 
+1. nodejs LTS , el cual descargaremos de la siguiente URL: 
+https://nodejs.org/es/ 
+Una vez descargado procederemos a la instalación y finalmente para comprobar el 
+correcto funcionamiento, abriremos una Ventana de comandos ( CMD) y escribiremos 
+node -v: 
+ 
+ 
+2. IONIC, https://ionicframework.com/ 
+Para la instalación, emplearemos el gestor NPM (instalado previamente con nodejs). 
+Abriremos una Ventana de comandos (CMD) y escribiremos: 
+npm install -g @ionic/cli 
+ 
+El proceso detallado Podemos consultar en la web de ionic: 
+https://ionicframework.com/docs/intro/cli 
+  
+ 
+5  
+ 
+Una vez instalado IONIC, Podemos comprobar la instalación, con la creación de un 
+Proyecto de ejemplo: 
+ 
+Desde Ventana de comandos, escribimos: 
+Ionic start DISM0 
+Esto nos despliega un asistente, en el cual marcamos las opciones (tabs, angular, 
+ngModules), finalmente, tras descargar los paquetes necesarios e indicar que NO 
+queremos crear una cuenta de Ionic, se nos ha generado el proyecto. Para ejecutar la 
+aplicación: 
+cd .\DISM0 
+Ionic serve 
+Automáticamente se desplegará el navegador con la URL http://localhost:8100 , con el 
+proyecto creado por defecto: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+6  
+ 
+Estructura del proyecto 
+Al crear un proyecto con ionic  se crea una carpeta con el nombre del proyecto y 
+dentro de ella una estructura de archivos y directorios que contiene todos los 
+elementos del proyecto. 
+e2e: Aquí se encuentra el código para escribir 
+tests. 
+ 
+node_modules: Se genera automáticamente al 
+instalar las dependencias npm con “npm install”. 
+Este comando explora el archivo package.json 
+para todos los paquetes que necesitan ser 
+instalados. 
+ 
+src: Esta es la carpeta más importante y donde 
+realizaremos la mayor parte de nuestro trabajo. 
+Aquí es donde están los archivos con el 
+contenido de nuestra aplicación, donde 
+definimos las pantallas, el estilo y el 
+comportamiento que tendrá nuestra aplicación. 
+ 
+Dentro de src tenemos las siguientes 
+subcarpetas: 
+ 
+La carpeta app, que es donde se ubicarán las 
+páginas que creemos para la aplicación, los 
+servicios y toda la lógica de programación. 
+ 
+La carpeta assets donde almacenaremos 
+aquellos recursos que necesitemos para nuestra 
+aplicación, como imágenes etc. 
+ 
+La carpeta environments contiene archivos 
+donde podemos definir variables de entorno. 
+ 
+La carpeta theme contiene el archivo variables.scss donde se definen las variables css 
+de ionic . Por defecto vienen definidos los colores para los temas, podemos 
+personalizarlos. 
+ 
+ 
+
+ 
+7  
+El archivo global.scss: En este archivo podemos establecer css para utilizar globalmente 
+en cualquier lugar de nuestra aplicación. 
+ 
+index.html: Es el punto de entrada de nuestra aplicación, por regla general no 
+tocaremos nada. 
+ 
+main.ts: Es el punto de entrada del módulo principal de nuestra aplicación. No 
+necesitaremos cambiar nada aquí. 
+ 
+Karma.js y test.ts: Se utilizan para realizar tests unitarios. 
+ 
+tsconfig.app.json, tsconfig.spec.json : Contienen configuraciones typescript para los 
+tests. 
+ 
+.editorconfig y .gitignore son dos archivos ocultos, así que dependiendo de tu sistema 
+puede que no los veas, están relacionados con la configuración del editor de código y 
+Git 
+ 
+angular.json: Archivo de configuración de la app. 
+ 
+Ionic.config.json: Contiene información básica sobre la configuración nuestro proyecto. 
+ 
+package.json: Contiene paquetes y dependencias de nodeJS. 
+ 
+tsconfig.json: Son archivos que contienen información necesaria a la hora de compilar 
+TypeScript, no necesitamos editar estos archivos. 
+ 
+  
+ 
+8  
+ 
+Depuración 
+Una opción muy interesante para la depuración es ejecutar la aplicación: 
+ 
+ionic serve 
+ 
+ 
+Y al emplear el navegador Chrome, (Botón derecho ratón-Inspeccionar Ctrl+May+I): 
+ 
+ 
+ 
+ 
+ 
+
+ 
+9  
+ 
+3. Visual Code, emplearemos este IDE para desarrollar las aplicaciones de Ionic. Lo 
+descargaremos de: 
+https://code.visualstudio.com/ 
+y procederemos a su instalación. 
+ 
+Las siguientes herramientas serán necesarias solo si se desea realizar el despliegue de la 
+aplicación y distribución en Android: 
+4. Android Studio, será necesario para poder implementar la aplicación y distribuirla. 
+https://developer.android.com/studio 
+5. JDK mínimo versión 8, Java Developer Kit, imprescindible para poder trabajar con 
+Android Studio. 
+https://www.oracle.com/es/java/technologies/downloads/ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+10  
+Ionic CLI 
+ 
+Ionic CLI es el intérprete por línea de comandos de Ionic,  contiene  una serie de 
+herramientas muy útiles que nos permitirán realizar de una forma sencilla diversas tareas 
+habituales en el desarrollo y producción de aplicaciones. 
+ 
+Toda la documentación y usos de esta herramienta: 
+https://ionicframework.com/docs/cli 
+ 
+Conocer la versión instalada de ionic: 
+Ionic --version 
+ 
+ 
+ 
+Crear un nuevo proyecto: 
+https://ionicframework.com/docs/cli/commands/start 
+ 
+Ejecutar un proyecto creado: 
+https://ionicframework.com/docs/cli/commands/serve 
+ 
+Uno de los usos más habituales es la generación de páginas, componentes, servicios: 
+https://ionicframework.com/docs/cli/commands/generate 
+ 
+Construir aplicaciones para despliegue 
+https://ionicframework.com/docs/cli/commands/build 
+ 
+Generar SSL Key y certificados: 
+https://ionicframework.com/docs/cli/commands/ssl-generate 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+11  
+Ejercicio 1. Desarrollo Aplicación TABS 
+ 
+A continuación, vamos a desarrollar una aplicación básica sobre ionic, mediante la plantilla 
+tabs y veremos la estructura que presenta esta. 
+Desde Ventana de comandos, escribimos 
+Ionic start 
+Esto nos despliega un asistente, en el cual seleccionaremos: 
+Angular como framework 
+Nombre del proyecto DISM1 
+Y Plantilla tabs 
+Abrimos con Visual Code y nos vamos tab1.page.html y dejamos la estructura de esta forma: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+12  
+ 
+Modificamos tab2 y tab3 de forma similar para que queden como en la imagen: 
+ 
+ 
+El listado de iconos disponibles lo podéis consultar en la documentación oficial de ionic desde el 
+siguiente enlace: 
+ https://ionicframework.com/docs/ionicons 
+Ahora vamos a ver como añadir una nueva página para ello haremos uso del comando: 
+ 
+ionic generate page 
+ 
+Si estamos en visual studio code, pulsando Ctrl+May+Ñ , podemos abrir un terminal e introducir 
+el comando para generar en esta. 
+ 
+ 
+Indicamos como nombre del nuevo tab: formulario 
+  
+ 
+13  
+ 
+Si nos fijamos, en la estructura del proyecto en src \app\ nos ha creado una nueva carpeta con 
+el nombre formulario y con todo lo necesario. Ahora nos toca indicarle a tabs-routing.module.ts 
+y tabs.page.html , la existencia de esa nueva página para que nos la muestre: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Quedando la vista de la App, con la nueva página: 
+ 
+ 
+ 
+  
+
+ 
+14  
+ 
+A continuación, vamos a hacer uso de los estilos, para ello Ionic hace uso de Sass (https://sass- 
+lang.com/ ). Sass es un preprocesador CSS. Un preprocesador CSS es una herramienta que nos 
+permite generar, de manera automática, hojas de estilo, añadiéndoles características que no 
+tiene CSS, y que son propias de los lenguajes de programación, como pueden ser variables, 
+funciones, selectores anidados, herencia, … 
+ 
+Tutorial básico: https://sass-lang.com/guide 
+ 
+Ionic está pensado para usar Sass, de tal manera que tenemos un tema establecido, el cual 
+podemos personalizarlo sin añadir estilos CSS. Para ello debemos de acceder a 
+theme/variables.css, ahí podremos personalizar nuestro estilo. 
+ 
+Para facilitar personalizar los temas, podemos emplear el generador de ionic: 
+https://ionicframework.com/docs/theming/color-generator 
+ 
+ 
+  
+ 
+15  
+ 
+Botones (ion-button) 
+En la documentación de Ionic podemos observar todas las opciones de los botones ( 
+https://ionicframework.com/docs/api/button ). 
+Vamos a crear en inicio.page.html, diferentes estilos de botones basados en la documentación 
+de ionic: 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+
+ 
+16  
+tab2.page.html: 
+ 
+Listas (ion-list) 
+Las listas son elementos muy comunes en las aplicaciones y pueden alojar cualquier tipo de 
+componentes (botones, toogles, iconos, imágenes, etc). 
+ 
+Vamos a crear una lista de elementos estáticos y dinámicos en tab2.page.html: 
+Es muy interesante poder cargar las listas desde un array, modificamos tab2.page.ts y 
+ 
+ 
+ 
+ 
+  
+ 
+17  
+ 
+Botones Check (ion-toggle) 
+Al igual que con los botones, ionic presenta los ion-toogle ( 
+https://ionicframework.com/docs/api/toggle ). 
+A continuación, dentro de formulario.page.html, introducimos las siguientes etiquetas: 
+ 
+ 
+ 
+18  
+Ion-card 
+Las tarjetas son una pieza estándar de la interfaz de usuario que sirve como punto de entrada a 
+información más detallada. Una tarjeta puede ser un solo componente, pero a menudo se 
+compone de un encabezado, título, subtítulo y contenido. 
+https://ionicframework.com/docs/api/card 
+ 
+Modificar tab2.page.html. Añadir una imagen en assets/img: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+19  
+Ejercicio 2. Desarrollo Aplicación Side 
+ 
+Para generar una aplicación mediante paginación side, podemos utilizar el asistente de ionic 
+para generar este tipo de aplicación o bien como es nuestro caso hacerlo nosotros desde una 
+aplicación blank. 
+ 
+Desde Ventana de comandos, escribimos 
+Ionic start DISM2 
+En las opciones le indicamos framework angular y type blank. 
+Ejecutamos y observamos que solo tenemos una página en nuestra App. 
+ 
+ 
+A continuación, vamos a añadir una nueva página mediante el CLI de ionic, así como la 
+paginación al estilo side. 
+Ejecutamos dentro de la carpeta DISM2: 
+ionic generate page credits 
+ 
+La plantilla principal de nuestra aplicación, la que se va a cargar siempre al inicio se encuentra 
+en el archivo app.component.html. Vamos a modificarla con este contenido: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+20  
+ 
+ 
+ 
+Lo primero que hacemos es envolver todo en una etiqueta ion-split-pane, esto permite 
+adaptarse a pantallas más grandes (como tablets) y muestra el menú justo al lado de su 
+contenido. Le asignamos la propiedad contentId=”main-content” que será el id a asignar a la 
+etiqueta ion-router-outlet donde irá el contenido de la aplicación. 
+ 
+Después tenemos ion-menu que es el componente que contiene el menú y al que asignaremos 
+el parámetro contentId=”main-content”, dentro del mismo añadimos su contenido igual que si 
+fuera una página, hemos añadido un ion-header con un toolbar y dentro el título del menú. 
+ 
+Después tenemos un  ion-content y dentro hemos creado un listado con dos items con las 
+opciones del menú. 
+ 
+En el parámetro routerLink de cada item definimos la ruta que tenemos que cargar al pulsar. 
+La ruta está entre comillas simples dentro de las comillas dobles, esto es para que lo tome como 
+un literal en lugar de una variable. 
+ 
+ 
+ 
+
+ 
+21  
+Ahora nos falta añadir a cada página home.page.html y credits.page.html en su cabecera un 
+ion-menu-button: 
+ 
+ 
+El resultado final: 
+ 
+ 
+ 
+ 
+22  
+Podemos añadir un botón que nos lleve de una página a otra en la propia página 
+home.page.html o añadir código typescript en home.page.ts, que realice esa labor: 
+ 
+ 
+ 
+ 
+Realizar los cambios oportunos para permitir en Créditos los dos botones para regresar a Home, 
+de forma similar al ejemplo anterior. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+23  
+Ejercicio 3. Servicios 
+ 
+Los servicios son proveedores que se encargan del manejo de datos, bien sean de la base de 
+datos, desde una API REST, etc. 
+ 
+En este caso vamos a acceder a una API REST para obtener desde un servidor remoto un listado 
+de usuarios. Para este pequeño ejemplo vamos a utilizar RANDOM USER GENERATOR 
+(https://randomuser.me/) que como se indica en su web es una API libre de código abierto para 
+generar datos de usuario aleatorios para realizar pruebas. 
+ 
+Lo que vamos a hacer es simplemente realizar una llamada a esta API donde recibiremos como 
+respuesta un listado de usuarios que mostraremos en nuestra App. 
+ 
+El primer paso será crear una aplicación en blanco (blank,angular,ngmodules): 
+ 
+Ionic start DISM3 blank 
+ 
+ 
+Seleccionamos Angular como framework, posteriormente accedemos a la carpeta generada 
+\DISM3. 
+A continuación, vamos a crear un servicio donde gestionaremos la comunicación con el servidor 
+remoto: 
+ 
+ionic g service services/http 
+ 
+ 
+Podemos comprobar cómo se ha creado una carpeta services y dentro, un archivo .ts con el 
+nombre http.service.ts. 
+ 
+Para realizar las peticiones al servidor vamos a utilizar un paquete de angular 
+llamado HttpClient, así que vam os a importarlo en nuestro servicio: 
+ 
+ 
+
+ 
+24  
+ 
+Ahora debemos importar y declarar como provider en app.module.ts el servicio que acabamos 
+de crear, también debemos importar y declarar en los imports HttpClientModule: 
+ 
+ 
+A continuación, vamos a añadir un método que llamaremos loadUsers a nuestro servicio para 
+obtener la lista de usuarios desde el servidor, por lo tanto, editamos el archivo http.service.ts y 
+añadimos la siguiente función después del constructor: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+25  
+ 
+Ahora vamos a crear la vista en home.page.html para mostrar un botón que llamará a la función 
+cargarUsuarios, y un listado de items con los usuarios que crearemos recorriendo con *ngFor 
+(angular) el array usuarios que posteriormente vamos a crear en el controlador: 
+ 
+ 
+ 
+ 
+ 
+26  
+Ahora toca modificar home.page.ts para obtener los datos desde el servicio y mostrarlos en la 
+vista para ello editamos home.page.ts e importamos el service httpProvider que acabamos de 
+crear, declaramos un array usuarios, añadimos un método para obtener los usuarios del servicio: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+27  
+Ejercicio 4. Creación de una fake Api Rest 
+Las APIs REST forman el back end para aplicaciones móviles. Cuando se desarrollan aplicaciones, 
+algunas veces no disponemos de las APIs REST listas para ser usadas para propósitos de 
+desarrollo. Para realizar peticiones GET/POST/PUT/ DELETE dentro de la app móvil necesitamos 
+un servidor que permita tratar con datos JSON. 
+ 
+json-server proporciona la funcionalidad para establecer un servidor fake API REST con un 
+mínimo esfuerzo, permitiendo peticiones GET / POST /PUT / DELETE. 
+https://github.com/typicode/json-server 
+ 
+Lo primero, será instalar la librería json-server: 
+ 
+npm install -g json-server 
+ 
+Una vez instalado, crearemos un fichero db.json, con datos : 
+ 
+ 
+El siguiente paso será ejecutar json-server: 
+ 
+json-server db.json 
+ 
+Y a continuación si accedemos a la url http://localhost:3000/usuarios , podremos realizar 
+pruebas bien con el navegador o mediante la aplicación Postman (https://www.postman.com/). 
+ 
+ 
+28  
+Ejercicio 5. Desarrollo Aplicación Consumo fake REST API 
+En este ejercicio vamos a desarrollar una aplicación en blanco, en la que al cargar la aplicación 
+nos muestre los datos de la fake Rest Api anterior y a su vez nos permita añadir, editar y borrar 
+datos. 
+ 
+Extenderemos la API Fake anterior con dos nuevos campos: Email y Edad. 
+Creamos la App DISM4, mediante el cli de Ionic, con las opciones Blanc y Angular. 
+A continuación, una vez generada la App, generamos dos nuevas páginas (edición, nuevo) 
+ 
+ionic generate page editar 
+ionic generate page nuevo 
+ 
+El siguiente paso consiste en modificar app.module.ts, para añadir el módulo httpclientmodule, 
+para poder consumir una API. 
+ 
+ 
+El siguiente paso será crear una clase con el objeto a consumir, en nuestro caso Usuario. 
+ 
+ionic generate class models/usuario 
+ 
+Abrimos la clase generada y la modificamos con: 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+29  
+ 
+Ahora vamos a generar el servicio encargado de consumir la fake api: 
+ 
+ionic generate service services/api 
+ 
+A continuación, modificamos el fichero api.services.ts, con: 
+ 
+ 
+Lo primero es importar la clase usuario, indicar donde tenemos nuestra API y una gestión de 
+errores. 
+ 
+ 
+30  
+Y a continuación en la misma clase vamos añadiendo las diferentes operaciones de servicio 
+asociados a un CRUD. 
+ 
+ 
+El siguiente paso será introducir la lógica en home.page.ts, primero importamos ApiService para 
+poder hacer uso de las llamadas a nuestra Api y luego importamos Router y navigatioExtras para 
+navegar por nuestras páginas y poder pasar parámetros entre páginas, a continuación, añadimos 
+la lógica asociada para permitirnos listar usuarios, borrar y editar: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+31  
+Ahora modificamos home.page.html, añadiendo el contenido para mostrar el listado de 
+usuarios, un botón para editar y otro para borrar, finalmente tras la lista de elementos, situamos 
+un nuevo botón para añadir usuarios: 
+ 
+ 
+ 
+El siguiente paso será modificar editar.page.html, donde añadimos los campos a editar 
+empleando databinding de Angular mediante ngModel, luego creamos botón para actualizar 
+registro y otro para volver a la página home: 
+ 
+ 
+ 
+ 
+ 
+ 
+32  
+y editar.page.ts, con la lógica necesaria para la página anterior: 
+ 
+Para finalizar tendremos que modificar la página nuevo.page.html y nuevo.page.ts para 
+permitir añadir nuevos Usuarios, de forma similar a editar: 
+ 
+ 
+33  
+Y el resultado final: 
+ 
+ 
+ 
+ 
+ 
+34  
+Ejercicio 6. Geolocalización 
+En este ejercicio vamos a desarrollar una aplicación en blanco, en la que obtendremos nuestra 
+geolocalización, el primer paso será crear una aplicación en blanco habilitando Capacitor: 
+ 
+ionic start GeolocacionApp blank --type=angular 
+ 
+ 
+Instalamos los plugins necesarios: 
+• cd GeolocacionApp 
+• npm install cordova-plugin-geolocation 
+• npm install @awesome-cordova-plugins/geolocation  
+• npm install @awesome-cordova-plugins/core --save  
+• ionic cap sync 
+ 
+ 
+A continuación, añadimos el plugin instalado en la App creada en app.module.ts: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+35  
+Modificamos el fichero home.page.ts para introducir el código necesario para obtener 
+la geolocalización y mostrarla en pantalla: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+36  
+Y por último modificamos home.page.html, para que utilice la función para obtener las 
+coordenadas: 
+ 
+Ejecutamos la aplicación con: 
+ionic serve --lab 
+ 
+ 
+y podemos comprobar que podemos obtener los datos 
+de posicionamiento. 
+ 
+Adicionalmente podríamos obtener los datos de 
+georreferenciación con: 
+https://ionicframework.com/docs/native/native- 
+geocoder 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+37  
+Ejercicio 7. Diseño API Rest OpenApi 
+Para el diseño de la API Rest mediante OpenApi emplearemos cualquiera de sus 
+utilidades para escribir código y visualizarlo, para nuestro ejercicio vamos a diseñar un 
+simple Hola Mundo: 
+ 
+https://swagger.io/tools/swagger-editor/ 
+https://editor.swagger.io/ 
+ 
+Conforme vamos escribiendo el código podemos visualizar como quedaría visualmente 
+la API, incluso probarla. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+38  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+39  
+Ejercicio 8. Generación de stub nodejs mediante Swagger 
+En este ejercicio generaremos mediante swagger el stub para nodejs , de forma que solo 
+necesitemos modificar este esqueleto para generar nuestro servicio web. 
+Accedemos a swagger y una vez dentro del editor: 
+ 
+ 
+Pulsamos en EXPORT → Server Stub → Nodejs-SERVER 
+ 
+ 
+Esto nos generará un zip, con la siguiente estructura: 
+ 
+El fichero README.md nos especifica los pasos a seguir para lanzar nuestra API Rest. 
+La carpeta API, contiene el fichero OpenApi diseñado mediante swagger, en controllers 
+y services se encuentran los ficheros generados donde debemos de establecer nuestra 
+lógica de negocio. 
+ 
+ 
+ 
+ 
+40  
+Por Ejemplo, para nuestro HolaMundo, podemos modificar dentro de DefaultService.js 
+y cambiar el resultado de la petición: 
+ 
+ 
+Si ejecutamos: 
+ 
+npm start 
+ 
+Accedemos a: http://localhost:8080/docs y hacemos un Try it Out 
+ 
+ 
+Y comprobamos resultado: 
+ 
+ 
+41  
+Ejercicio 9. Generación API con acceso a BD a partir de OpenAPI 
+A partir de la BD DISM, donde disponemos de una tabla Usuarios, deberemos diseñar 
+mediante OpenApi las operaciones CRUD para dicha table (consultar, borrar, actualizar, 
+nuevo) asociándolas a las peticiones correspondientes (get, delete, post, put). 
+ 
+El primer paso crear la BD, para ello mediante MySQL restauraremos la BD del script 
+proporcionado. 
+El siguiente paso será diseñar la API mediante OpenApi con la ayuda de swagger editor. 
+Posteriormente crearemos mediante el generador de código de swagger el servicio web 
+, para ello, Generate Server -> NodeJs Server. 
+ 
+Por último, añadiremos la lógica de negocio necesaria para acceder a BD (Ejercicios 
+anexo) 
+ 
+Finalmente podremos comprobar como en el ejercicio 8 al acceder a la URL 
+http://localhost:8080/docs el correcto funcionamiento de la API. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
